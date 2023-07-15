@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SideBar from './SideBar';
+import { Videos, SideBar } from './';
 import { Box, Stack, Typography } from '@mui/material';
 
 const Feed = () => {
@@ -10,6 +10,12 @@ const Feed = () => {
         <Typography className="copyriht" variant="body2" sx={{ mt: 1.5, color: '#fff' }}>
           Copyleft 🄯 2023 YouTube Clone
         </Typography>
+      </Box>
+      <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
+        <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: "snow" }}>
+          New <span style={{ color: '#F31503' }}>Videos</span>
+        </Typography>
+        <Videos videos={[]} />
       </Box>
     </Stack >
   )
