@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Stack } from '@mui/material';
 import { categories } from '../utils/constants';
-const SideBar = () => {
-  const [selectedCategory, setSelectedCategory] = useState('New');
+type SideBarProps = {
+  selectedCategory: string,
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+const SideBar = ({ selectedCategory, setSelectedCategory }: SideBarProps) => {
 
   return (
     <Stack direction="row" sx={{ overflowY: "auto", height: { sx: 'auto', md: '95%' }, flexDirection: { md: 'column' }, }}>
@@ -10,6 +13,7 @@ const SideBar = () => {
         return (
           <button
             className="category-btn"
+            onClick={() => setSelectedCategory(category.name)}
             style={{ background: category.name === selectedCategory ? '#FC1503' : '#000', color: 'snow' }}
             key={category.name}
           >
