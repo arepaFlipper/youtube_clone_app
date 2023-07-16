@@ -7,7 +7,11 @@ export interface ItemProps {
         url: string;
       }
     }
+    title: string;
   };
+  statistics: {
+    subscriberCount: number;
+  }
 };
 
 export interface IDVideo {
@@ -17,5 +21,13 @@ export interface IDVideo {
 
 export interface IDChannel {
   kind: "youtube#channel";
-  channelId: string;
+  id: {
+    channelId: string;
+  };
+  snippet: {
+    title: string;
+  }
+  statistics: {
+    subscriberCount: number;
+  }
 }

@@ -14,7 +14,7 @@ const Videos = ({ videos }: VideosProps<ItemProps>) => {
           return (
             <Box key={idx}>
               {(item.id.kind === 'youtube#video') && (<VideoCard video={item} />)}
-              {(item.id.kind === 'youtube#channel') && (<ChannelCard channel={item} />)}
+              {(item.id.kind === 'youtube#channel') && (<ChannelCard channelDetail={item} />)}
             </Box>
           )
         })}
