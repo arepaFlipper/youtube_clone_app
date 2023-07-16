@@ -6,7 +6,7 @@ interface IProps {
 
 const ChannelCard = ({ channel }: IProps) => {
   return (
-    <div>ChannelCard</div>
+    <div style={{ color: 'white' }}>ChannelCard</div>
   )
 }
 

@@ -6,7 +6,7 @@ interface IProps {
 
 const VideoCard = ({ video }: IProps) => {
   return (
-    <div>
+    <div style={{ color: 'white' }}>
       VideoCard
     </div>
   )
