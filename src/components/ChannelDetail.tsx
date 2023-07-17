@@ -12,9 +12,9 @@ const ChannelDetail = () => {
     (async () => {
       try {
         const channels = await fetchFromAPI(`/channels?part=snippet&id=${id}`);
-        const videos_list = await fetchFromAPI(`/search?channelId=${id}&part=snippet&order=date`);
+        const channel_videos = await fetchFromAPI(`/search?channelId=${id}&part=snippet&order=date`);
         setChannelDetail(channels?.items[0]);
-        setVideos(videos_list?.items[0]);
+        setVideos(channel_videos?.items);
       } catch (error) {
         setChannelDetail(null);
         setVideos([]);
@@ -22,7 +22,17 @@ const ChannelDetail = () => {
     })();
   }, [id])
   return (
-    <div>{id}</div>
+    <Box minHeight="96vh">
+      <Box>
+        <div style={{ background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%,rgba(0,212,255,1) 100%)', zIndex: 10, height: '300px' }} />
+        {(channelDetail) && <ChannelCard channelDetail={channelDetail} marginTop='-110px' />}
+      </Box>
+      <Box display="flex" p="2">
+        <Box sx={{ mr: { sm: '100px' } }}>
+          <Videos videos={videos} />
+        </Box>
+      </Box>
+    </Box >
   )
 }
 

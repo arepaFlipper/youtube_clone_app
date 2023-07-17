@@ -6,28 +6,29 @@ import { ItemProps } from '../types';
 
 interface IProps {
   channelDetail: ItemProps;
+  marginTop: string;
 }
 
 // @ts-ignore
-const ChannelCard = ({ channelDetail }: IProps) => {
-  const { id, snippet } = channelDetail;
-  const { channelId } = id;
+const ChannelCard = ({ channelDetail, marginTop }: IProps) => {
   return (
-    <Box sx={{ boxShadow: 'none', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', widht: { xs: '356px', md: '320px' }, height: '326px', margin: 'auto' }}>
+    <Box sx={{ boxShadow: 'none', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', widht: { xs: '356px', md: '320px' }, height: '326px', margin: 'auto', marginTop }}>
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', color: '#FFF' }}>
           <CardMedia
             image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
-            alt={channelDetail?.snippet?.title}
+            alt={channelDetail?.snippet?.title || ""}
             sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3d3' }}
           />
+          <CardContent />
+
           <Typography variant="h6" >
             {channelDetail?.snippet?.title}
             <CheckCircle sx={{ fontSize: 14, color: '#1AA7EC', ml: '5px' }} />
           </Typography>
           {channelDetail?.statistics?.subscriberCount && (
             <Typography variant="subtitle2" color="white">
-              {(channelDetail?.statistics?.subscriberCount).toLocaleString()}
+              {(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
             </Typography>
           )}
         </CardContent>

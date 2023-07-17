@@ -26,8 +26,8 @@ export interface IDChannel {
   };
   snippet: {
     title: string;
-  }
+  };
   statistics: {
     subscriberCount: number;
-  }
+  };
 }
