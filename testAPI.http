@@ -9,3 +9,11 @@ X-RapidAPI-Key: {{REACT_APP_RAPID_API_KEY}}
 GET https://youtube-v31.p.rapidapi.com/search?part=snippet&q=New&maxResults=50
 X-RapidAPI-Host: youtube-v31.p.rapidapi.com
 X-RapidAPI-Key: {{REACT_APP_RAPID_API_KEY}}
+
+GET https://youtube-v31.p.rapidapi.com/channels?part=snippet&id=UCmXmlB4-HJytD7wek0Uo97A
+X-RapidAPI-Host: youtube-v31.p.rapidapi.com
+X-RapidAPI-Key: {{REACT_APP_RAPID_API_KEY}}
+
+GET https://youtube-v31.p.rapidapi.com/search?channelId=UCmXmlB4-HJytD7wek0Uo97A&part=snippet&order=date
+X-RapidAPI-Host: youtube-v31.p.rapidapi.com
+X-RapidAPI-Key: {{REACT_APP_RAPID_API_KEY}}
